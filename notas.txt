@@ -1,0 +1,2 @@
+a la hora de desarrollar en front, usar el puerto 3000. npm run dev
+Para desplegar la aplicación a producction, es el puerto 8443, que es donde está el backend.
