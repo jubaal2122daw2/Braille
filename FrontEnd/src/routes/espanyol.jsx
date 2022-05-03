@@ -15,7 +15,7 @@ export default function Idiomas() {
             <div className='flex items-center py-48'>
                 <div className='flex flex-col m-auto gap-20'>
                     <Link className="rounded-full gap-10 ring-4 ring-teal-700 h-32 w-32 sub-menu" to='/idiomas'><AbcIcon style={{fontSize: "8rem", color: "#de7a22"}} /></Link>
-                    <Link className="rounded-full gap-10 ring-4 ring-teal-700 h-32 w-32 sub-menu" to='/idiomas'><CameraAltIcon style={{fontSize: "3.5rem", color: "#de7a22", marginTop: "2rem"}} /></Link>
+                    <Link className="rounded-full gap-10 ring-4 ring-teal-700 h-32 w-32 sub-menu" to='/abecedario'><CameraAltIcon style={{fontSize: "3.5rem", color: "#de7a22", marginTop: "2.2rem"}} /></Link>
                 </div>
             </div>
         </div>
