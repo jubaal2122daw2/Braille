@@ -5,7 +5,7 @@ import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Idiomas from './routes/idiomas';
 import Espanyol from './routes/espanyol';
-import Camara from './routes/camara';
+import Abece from './routes/abece';
 
 //strict mode es para detectar fallos en ls hijos mientras vas desarrollando
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/' element={<App />}/>
         <Route path='idiomas' element={<Idiomas />} />
         <Route path='espanyol' element={<Espanyol />} />
-        <Route path='abecedario' element={<Camara />} />
+        <Route path='abecedario' element={<Abece />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,0 +1,240 @@
+{
+    "catalan": [
+        {
+            "letra": "a",
+            "imagen": "a.png"
+        },
+        {
+            "letra": "à",
+            "imagen": "a_oberta.png"
+        },
+        {
+            "letra": "b",
+            "imagen": "b.png"
+        },
+        {
+            "letra": "c",
+            "imagen": "c.png"
+        },
+        {
+            "letra": "d",
+            "imagen": "d.png"
+        },
+        {
+            "letra": "e",
+            "imagen": "e.png"
+        },
+        {
+            "letra": "è",
+            "imagen": "e_oberta.png"
+        },
+        {
+            "letra": "é",
+            "imagen": "e_tancada.png"
+        },
+        {
+            "letra": "f",
+            "imagen": "f.png"
+        },
+        {
+            "letra": "g",
+            "imagen": "g.png"
+        },
+        {
+            "letra": "h",
+            "imagen": "h.png"
+        },
+        {
+            "letra": "i",
+            "imagen": "i.png"
+        },
+        {
+            "letra": "ï",
+            "imagen": "i_puntos.png"
+        },
+        {
+            "letra": "í",
+            "imagen": "i_tancada.png"
+        },
+        {
+            "letra": "j",
+            "imagen": "j.png"
+        },
+        {
+            "letra": "k",
+            "imagen": "k.png"
+        },
+        {
+            "letra": "l",
+            "imagen": "l.png"
+        },
+        {
+            "letra": "m",
+            "imagen": "m.png"
+        },
+        {
+            "letra": "n",
+            "imagen": "n.png"
+        },
+        {
+            "letra": "o",
+            "imagen": "o.png"
+        },
+        {
+            "letra": "ó",
+            "imagen": "o_tancada.png"
+        },
+        {
+            "letra": "ò",
+            "imagen": "o_oberta.png"
+        },
+        {
+            "letra": "p",
+            "imagen": "p.png"
+        },
+        {
+            "letra": "q",
+            "imagen": "q.png"
+        },
+        {
+            "letra": "r",
+            "imagen": "r.png"
+        },
+        {
+            "letra": "s",
+            "imagen": "s.png"
+        },
+        {
+            "letra": "t",
+            "imagen": "t.png"
+        },
+        {
+            "letra": "u",
+            "imagen": "u.png"
+        },
+        {
+            "letra": "ü",
+            "imagen": "u_puntos.png"
+        },
+        {
+            "letra": "ú",
+            "imagen": "u_tancada.png"
+        },
+        {
+            "letra": "v",
+            "imagen": "v.png"
+        },
+        {
+            "letra": "w",
+            "imagen": "w.png"
+        },
+        {
+            "letra": "x",
+            "imagen": "x.png"
+        },
+        {
+            "letra": "y",
+            "imagen": "y.png"
+        },
+        {
+            "letra": "z",
+            "imagen": "z.png"
+        },
+        {
+            "letra": "ç",
+            "imagen": "ç.png"
+        },
+        {
+            "letra": "0",
+            "imagen": "0.png"
+        },
+        {
+            "letra": "1",
+            "imagen": "1.png"
+        },
+        {
+            "letra": "2",
+            "imagen": "2.png"
+        },
+        {
+            "letra": "3",
+            "imagen": "3.png"
+        },
+        {
+            "letra": "4",
+            "imagen": "4.png"
+        },
+        {
+            "letra": "5",
+            "imagen": "5.png"
+        },
+        {
+            "letra": "6",
+            "imagen": "6.png"
+        },
+        {
+            "letra": "7",
+            "imagen": "7.png"
+        },
+        {
+            "letra": "8",
+            "imagen": "8.png"
+        },
+        {
+            "letra": "9",
+            "imagen": "9.png"
+        },
+        {
+            "letra": ".",
+            "imagen": "punto.png"
+        },
+        {
+            "letra": ",",
+            "imagen": "coma.png"
+        },
+        {
+            "letra": "?",
+            "imagen": "interrogacion.png"
+        },
+        {
+            "letra": "!",
+            "imagen": "exclamacion.png"
+        },
+        {
+            "letra": ":",
+            "imagen": "dos_puntos.png"
+        },
+        {
+            "letra": ";",
+            "imagen": "punto_y_coma.png"
+        },
+        {
+            "letra": "\"",
+            "imagen": "comillas.png"
+        },
+        {
+            "letra": "'",
+            "imagen": "comillas2.png"
+        },
+        {
+            "letra": "-",
+            "imagen": "guion.png"
+        },
+        {
+            "letra": "*",
+            "imagen": "asterisco.png"
+        },
+        {
+            "letra": "Majusc",
+            "imagen": "majusculas.png"
+        },
+        {
+            "letra": "(",
+            "imagen": "paren.png"
+        },
+        {
+            "letra": ")",
+            "imagen": "paren2.png"
+        }
+    ]
+}

@@ -1,4 +1,11 @@
+/**
+ * Connexión con MongoDB.
+ */
 import { MongoClient } from "mongodb";
+
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const data = require("./abcedario.json");
 
 async function accederBDD() {
     let url = "mongodb://127.0.0.1:27017/"; //ubicación db en local
@@ -12,10 +19,14 @@ async function accederBDD() {
 
         if (listarcolleciones.length == 0) {
             let collection = await db.createCollection("abecedario");
-            await collection.insertOne({ letra: "A", imagen: "prueba" });
-            // await collection.insertOne({ nombre: "Rene", pass: "othello2" });
+            // await collection.insertMany([data]);
+            for (const key of data.catalan) {
+                await collection.insertOne(key);
+            }
+            console.log("Colección creada");
+
         }
-        console.log("Base de datos -->",listarcolleciones.length);
+        //console.log("Base de datos -->", data);
         await client.close();
 
     } catch (e) {

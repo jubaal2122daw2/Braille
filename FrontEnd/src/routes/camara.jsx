@@ -4,7 +4,7 @@ import '../App.css';
 export default function Camara() {
     return (
         <div>
-           HOLA
+           Aquí ira la cámara
         </div>
     );
 }

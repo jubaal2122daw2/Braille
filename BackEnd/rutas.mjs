@@ -10,4 +10,4 @@ router.get("/abecedario", (req, res) => {
     res.send("BDD creada");
 });
 
-export default router;
+export default router; //Para que el servidor localice las rutas
