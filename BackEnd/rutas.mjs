@@ -6,8 +6,8 @@ var router = express.Router();
 
 router.get("/abecedario", (req, res) => {
     console.log("Entra en la ruta /abecedario");
-    accederBDD(); //n vez de accede 
-    res.send("BDD creada");
+    accederBDD();
+    res.send();
 });
 
 export default router; //Para que el servidor localice las rutas

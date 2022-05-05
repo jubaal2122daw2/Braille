@@ -26,7 +26,6 @@ async function accederBDD() {
             console.log("Colección creada");
 
         }
-        //console.log("Base de datos -->", data);
         await client.close();
 
     } catch (e) {

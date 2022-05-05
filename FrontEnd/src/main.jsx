@@ -20,3 +20,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </React.StrictMode>
 )
+
+//CUIDADO, QUITAR EL STRICT MODE PARA QUE FUNCIONE EN PRODUCCION (NO EN DESARROLLO) CARGA DOS VECES CIERTOS COMPONENTES.
