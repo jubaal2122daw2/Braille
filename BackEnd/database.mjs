@@ -33,18 +33,17 @@ async function accederBDD() {
     }
 }
 
-async function buscaLetra(letra, imagen) {
+async function buscaLetra() {
     let url = "mongodb://127.0.0.1:27017/"; //ubicación db en local
     let client = await MongoClient.connect(url, { useNewUrlParser: true });
     let db = client.db("braille");
-    let resultado = await db.collection("abecedario").findOne({ letra: letra, imagen: imagen });
+    let resultado = await db.collection("abecedario").find({});
 
     if (resultado) {
-        console.log(`Se ha encontrado La letra '${letra}' en la Base de Datos`);
-        console.log(resultado);
-        return true;
+
+        return resultado.toArray();
     } else {
-        console.log(`No existe la letra '${letra}' en la Base de Datos`);
+        console.log("No se han encontrado datos");
         return false;
     }
 }
