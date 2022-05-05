@@ -9,7 +9,7 @@ import Abece from './routes/abece';
 
 //strict mode es para detectar fallos en ls hijos mientras vas desarrollando
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />}/>
@@ -18,7 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='abecedario' element={<Abece />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+  // </React.StrictMode>
 )
 
 //CUIDADO, QUITAR EL STRICT MODE PARA QUE FUNCIONE EN PRODUCCION (NO EN DESARROLLO) CARGA DOS VECES CIERTOS COMPONENTES.
