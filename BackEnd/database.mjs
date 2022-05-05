@@ -13,8 +13,6 @@ async function accederBDD() {
 
     try {
         let db = client.db("braille");
-        console.log("BDD creada");
-
         let listarcolleciones = await db.listCollections({ name: "abecedario" }).toArray();
 
         if (listarcolleciones.length == 0) {
@@ -24,7 +22,6 @@ async function accederBDD() {
                 await collection.insertOne(key);
             }
             console.log("Colección creada");
-
         }
         await client.close();
 
