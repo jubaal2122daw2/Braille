@@ -28,15 +28,13 @@ export default function Abece() {
         setShowModal(newValue);
     }
 
-    console.log(showModal);
-
     if (error) {
         return <div>Error: {error.message}</div>;
     } else {
         return (
             <div>
                 <div className="box-border h-18 w-32 p-4 ">
-                    <Link className="back rounded-md" to='/espanyol'><ArrowBackIosNewIcon className="arrow" />Volver</Link>
+                    <Link className="back rounded-md" to='/catala'><ArrowBackIosNewIcon className="arrow" />Volver</Link>
                 </div>
                 <Modal estadoModal={showModal} onChange={handleChange} imagen={imagen} />
                 <div className="container px-5 py-16 mx-auto">

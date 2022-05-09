@@ -1,98 +1,53 @@
-feather.replace();
+'use strict';
 
-const controls = document.querySelector('.controls');
-const cameraOptions = document.querySelector('.video-options>select');
-const video = document.querySelector('video');
-const canvas = document.querySelector('canvas');
-const screenshotImage = document.querySelector('img');
-const buttons = [...controls.querySelectorAll('button')];
-let streamStarted = false;
+// Put variables in global scope to make them available to the browser console.
 
-const [play, pause, screenshot] = buttons;
 
-const constraints = {
+var video = document.querySelector('video');
+var constraints = window.constraints = {
   video: {
     width: {
       min: 1280,
-      ideal: 1920,
-      max: 2560,
+      max: 1920,
     },
     height: {
       min: 720,
-      ideal: 1080,
-      max: 1440
+      max: 1080
     },
-  }
-};
-
-cameraOptions.onchange = () => {
-  const updatedConstraints = {
-    ...constraints,
-    deviceId: {
-      exact: cameraOptions.value
+    facingMode: {
+      exact: 'environment'
     }
+  }
+};
+var errorElement = document.querySelector('#errorMsg');
+
+navigator.mediaDevices.getUserMedia(constraints)
+.then(function(stream) {
+  var videoTracks = stream.getVideoTracks();
+  console.log('Got stream with constraints:', constraints);
+  console.log('Using video device: ' + videoTracks[0].label);
+  stream.onremovetrack = function() {
+    console.log('Stream ended');
   };
-
-  startStream(updatedConstraints);
-};
-
-play.onclick = () => {
-  if (streamStarted) {
-    video.play();
-    play.classList.add('d-none');
-    pause.classList.remove('d-none');
-    return;
-  }
-  if ('mediaDevices' in navigator && navigator.mediaDevices.getUserMedia) {
-    const updatedConstraints = {
-      ...constraints,
-      deviceId: {
-        exact: cameraOptions.value
-      }
-    };
-    startStream(updatedConstraints);
-  }
-};
-
-const pauseStream = () => {
-  video.pause();
-  play.classList.remove('d-none');
-  pause.classList.add('d-none');
-};
-
-const doScreenshot = () => {
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
-  canvas.getContext('2d').drawImage(video, 0, 0);
-  screenshotImage.src = canvas.toDataURL('image/webp');
-  screenshotImage.classList.remove('d-none');
-};
-
-pause.onclick = pauseStream;
-screenshot.onclick = doScreenshot;
-
-const startStream = async (constraints) => {
-  const stream = await navigator.mediaDevices.getUserMedia(constraints);
-  handleStream(stream);
-};
-
-
-const handleStream = (stream) => {
+  window.stream = stream; // make variable available to browser console
   video.srcObject = stream;
-  play.classList.add('d-none');
-  pause.classList.remove('d-none');
-  screenshot.classList.remove('d-none');
+})
+.catch(function(error) {
+  if (error.name === 'ConstraintNotSatisfiedError') {
+    errorMsg('The resolution ' + constraints.video.width.exact + 'x' +
+        constraints.video.height.exact + ' px is not supported by your device.');
+  } else if (error.name === 'PermissionDeniedError') {
+    errorMsg('Permissions have not been granted to use your camera and ' +
+      'microphone, you need to allow the page access to your devices in ' +
+      'order for the demo to work.');
+  }
+  errorMsg('getUserMedia error: ' + error.name, error);
+});
 
-};
+function errorMsg(msg, error) {
+  errorElement.innerHTML += '<p>' + msg + '</p>';
+  if (typeof error !== 'undefined') {
+    console.error(error);
+  }
+}
 
-
-const getCameraSelection = async () => {
-  const devices = await navigator.mediaDevices.enumerateDevices();
-  const videoDevices = devices.filter(device => device.kind === 'videoinput');
-  const options = videoDevices.map(videoDevice => {
-    return `<option value="${videoDevice.deviceId}">${videoDevice.label}</option>`;
-  });
-  cameraOptions.innerHTML = options.join('');
-};
-
-getCameraSelection();

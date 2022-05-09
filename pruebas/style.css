@@ -1,4 +1,4 @@
-.screenshot-image {
+/* .screenshot-image {
     width: 150px;
     height: 90px;
     border-radius: 4px;
@@ -103,4 +103,7 @@ video {
 
 .controls > button:hover svg {
     color: white;
+} */
+video {
+    width: 100%;
 }
