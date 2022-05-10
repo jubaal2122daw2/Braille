@@ -16,7 +16,7 @@ export default function Abece() {
             method: 'GET',
             redirect: 'follow',
         };
-        fetch("https://localhost:8443/api/abecedario", requestOptions)
+        fetch(`https://${window.location.hostname}:8443/api/abecedario`, requestOptions)
             .then(response => response.text())
             .then(result => setAbecedario(JSON.parse(result)),
                 (error) => {
