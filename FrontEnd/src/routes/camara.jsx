@@ -1,10 +1,16 @@
 import * as React from 'react';
 import '../App.css';
+import { useEffect, useState } from 'react';
+import { Link, Outlet } from "react-router-dom";
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 export default function Camara() {
     const URL = "./models/";
-
     let model, webcam, labelContainer, maxPredictions;
+
+    useEffect(() => {
+        init();
+    }, [])
 
     // Load the image model and setup the webcam
     async function init() {
@@ -51,10 +57,13 @@ export default function Camara() {
         }
     }
     return (
-        <div className='grid place-items-center h-screen'>
-            <button type="button" onClick={() => { init() }}>Start</button>
+        <div className='grid place-items-center h-screen bg-black'>
+            <div className="-mb-16 box-border h-18 w-32 p-4 place-self-start">
+                <Link className="back rounded-md" to='/catala'><ArrowBackIosNewIcon className="arrow" />Volver</Link>
+            </div>
+            <div className='text-teal-500'>Centra el texto en la cámara para traducir</div>
             <div className='w-full md:w-4/5 lg:w-2/5' id="webcam-container"></div>
-            <div id="label-container"></div>
+            <div id="label-container" className='text-teal-500'></div>
         </div>
     );
 }
