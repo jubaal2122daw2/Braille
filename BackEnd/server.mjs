@@ -16,7 +16,9 @@ app.use(express.json());
 app.use(express.static("../FrontEnd/dist")); //Consumidor
 app.use("/api", cors(), rutas); //para conectar con las rutas del backend. "Api se define como una ruta solo en el backend"
 // app.use(cors(corsOptions));
-
+app.get("*", (req, res) => {
+    res.redirect('/');
+});
 
 const options = {
     key: fs.readFileSync("../certificado/priv_and_pub.key"),

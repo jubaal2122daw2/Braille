@@ -72,7 +72,7 @@ function Modal(props) {
                             <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                                 {/*body*/}
                                 <div className="relative p-6 flex-auto">
-                                    <img src={`../../assets/letras_catalan/${props.imagen}`} alt="letra_Abecedario" className="w-full" />
+                                    <img src={`./letras_catalan/${props.imagen}`} alt="letra_Abecedario" className="w-full" />
                                 </div>
                                 {/*footer*/}
                                 <div className="flex items-center justify-center p-12 border-t border-solid border-slate-200 rounded-b">

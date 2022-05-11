@@ -52,7 +52,6 @@ export default function Camara() {
     }
     return (
         <div>
-            <div>Teachable Machine Image Model</div>
             <button type="button" onClick={() =>{init()}}>Start</button>
             <div id="webcam-container"></div>
             <div id="label-container"></div>

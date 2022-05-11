@@ -1,3 +1,4 @@
 a la hora de desarrollar en front, usar el puerto 3000. npm run dev
 Para desplegar la aplicación a production, es el puerto 8443, que es donde está el backend.
 Si salta un error en el localhost 3000 de certificado primero iniciar server para aceptar el certificado.
+La camara en el movil solo funciona en produccion con el puerto 8443 porque es seguro.
