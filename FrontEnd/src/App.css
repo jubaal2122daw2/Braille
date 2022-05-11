@@ -77,3 +77,8 @@
   background-color: #f4cc70;
   color: #de7a22;
 }
+
+/*ESTILO DE LA CAMARA*/
+#webcam-container canvas{
+  width: 100%;
+}

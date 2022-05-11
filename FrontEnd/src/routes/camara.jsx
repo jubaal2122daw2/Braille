@@ -21,7 +21,7 @@ export default function Camara() {
 
         // Convenience function to setup a webcam
         const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(200, 200, false); // width, height, flip
+        webcam = new tmImage.Webcam(300, 300, false); // width, height, flip
         await webcam.setup({ facingMode: "environment" }); // request access to the webcam
         await webcam.play();
         window.requestAnimationFrame(loop);
@@ -51,9 +51,9 @@ export default function Camara() {
         }
     }
     return (
-        <div>
-            <button type="button" onClick={() =>{init()}}>Start</button>
-            <div id="webcam-container"></div>
+        <div className='grid place-items-center h-screen'>
+            <button type="button" onClick={() => { init() }}>Start</button>
+            <div className='w-full md:w-4/5 lg:w-2/5' id="webcam-container"></div>
             <div id="label-container"></div>
         </div>
     );
