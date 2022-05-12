@@ -235,6 +235,10 @@
         {
             "letra": ")",
             "imagen": "paren2.png"
+        },
+        {
+            "letra": "@",
+            "imagen": "arroba.png"
         }
     ]
 }
