@@ -57,7 +57,7 @@ export default function Abece() {
                             <div key={item._id} className="p-4 md:w-1/4 sm:w-1/2 w-1/2">
                                 <div className="border-4 border-amber-700 px-4 py-6 rounded-lg h-48 ficha grid content-center"
                                     onClick={() => { setLetra(item), setImagen(item.imagen), setShowModal(true) }}>
-                                    <h2 className="title-font font-medium text-7xl text-clip overflow-hidden text-teal-700">{item.letra}</h2>
+                                    <h2 className="title-font font-medium text-7xl text-teal-700">{item.letra}</h2>
                                 </div>
                             </div>
                         ))
