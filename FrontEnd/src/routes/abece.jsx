@@ -10,6 +10,7 @@ export default function Abece() {
     const [imagen, setImagen] = useState('');
     const [letra, setLetra] = useState({});
     const [showModal, setShowModal] = useState(false);
+    const [buscarLetra, setBuscarLetra] = useState('');
 
     useEffect(() => {
         var requestOptions = {
@@ -24,7 +25,7 @@ export default function Abece() {
                 });
     }, [])
 
-    function handleChange(newValue) {
+    const handleChange = (newValue) => {
         setShowModal(newValue);
     }
 
@@ -36,17 +37,31 @@ export default function Abece() {
                 <div className="box-border h-18 w-32 p-4 ">
                     <Link className="back rounded-md" to='/catala'><ArrowBackIosNewIcon className="arrow" />Volver</Link>
                 </div>
+                <div className='flex justify-center pt-10'>
+                    <input
+                        className="shadow appearance-none border rounded w-4/5 py-4 px-4 text-4xl text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        type="text" placeholder="Cercar la lletra"
+                        onChange={(e) => setBuscarLetra(e.target.value)} />
+                </div>
                 <Modal estadoModal={showModal} onChange={handleChange} imagen={imagen} />
                 <div className="container px-5 py-16 mx-auto">
                     <div className="flex flex-wrap flex-row -m-4 text-center">
-                        {abecedario.map((item, index) => (
+                        {abecedario.filter((val)=>{
+                            if (buscarLetra == ""){
+                                return val;
+                            }
+                            else if (val.letra.toLowerCase().includes(buscarLetra.toLowerCase())){
+                                return val;
+                            }
+                        }).map((item, index) => (
                             <div key={item._id} className="p-4 md:w-1/4 sm:w-1/2 w-1/2">
                                 <div className="border-4 border-amber-700 px-4 py-6 rounded-lg h-48 ficha grid content-center"
                                     onClick={() => { setLetra(item), setImagen(item.imagen), setShowModal(true) }}>
-                                    <h2 className="title-font font-medium text-7xl text-teal-700">{item.letra}</h2>
+                                    <h2 className="title-font font-medium text-7xl text-clip overflow-hidden text-teal-700">{item.letra}</h2>
                                 </div>
                             </div>
-                        ))}
+                        ))
+                        }
                     </div>
                 </div>
             </div>

@@ -26,8 +26,8 @@ export default function Camara() {
         maxPredictions = model.getTotalClasses();
 
         // Convenience function to setup a webcam
-        const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(300, 300, false); // width, height, flip
+        const flip = false; // whether to flip the webcam
+        webcam = new tmImage.Webcam(300, 300, flip); // width, height, flip
         await webcam.setup({ facingMode: "environment" }); // request access to the webcam
         await webcam.play();
         window.requestAnimationFrame(loop);
