@@ -79,9 +79,9 @@
 }
 
 /*ESTILO DE LA CAMARA*/
-#webcam-container canvas{
+/* #webcam-container canvas{
   width: 100%;
-}
+} */
 
 .background-negro{
   background-color: black;

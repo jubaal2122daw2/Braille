@@ -8,9 +8,9 @@ export default function Camara() {
     const URL = "./models/";
     let model, webcam, labelContainer, maxPredictions;
 
-    useEffect(() => {
-        init();
-    }, [])
+    // useEffect(() => {
+    //     init();
+    // }, [])
 
     // Load the image model and setup the webcam
     async function init() {
@@ -61,8 +61,9 @@ export default function Camara() {
             <div className="-mb-16 box-border h-18 w-32 p-4 place-self-start">
                 <Link className="back rounded-md" to='/catala'><ArrowBackIosNewIcon className="arrow" />Volver</Link>
             </div>
+            <div className='text-teal-500' onClick={() => {init()}}>Click</div>
             <div className='text-teal-500'>Centra el texto en la cámara para traducir</div>
-            <div className='w-full md:w-4/5 lg:w-2/5' id="webcam-container"></div>
+            <div  id="webcam-container"></div>
             <div id="label-container" className='text-teal-500'></div>
         </div>
     );
