@@ -8,6 +8,7 @@ import Espanyol from './routes/espanyol';
 import Catalan from './routes/catalan';
 import Abece from './routes/abece';
 import Camara from './routes/camara';
+import Letra from './routes/letra';
 
 //strict mode es para detectar fallos en ls hijos mientras vas desarrollando
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='catala' element={<Catalan />} />
         <Route path='abecedario' element={<Abece />} />
         <Route path='camara' element={<Camara />} />
+        <Route path='letra' element={<Letra />} />
       </Routes>
     </BrowserRouter>
   // </React.StrictMode>
