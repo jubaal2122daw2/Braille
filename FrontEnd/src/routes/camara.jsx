@@ -15,7 +15,10 @@ export default function Camara() {
     // }, [])
 
     // Load the image model and setup the webcam
+    let continuar = false;
+
     async function init() {
+            continuar = true;
             const modelURL = URL + "model.json";
             const metadataURL = URL + "metadata.json";
             // const devices = await navigator.mediaDevices.enumerateDevices();
@@ -36,6 +39,7 @@ export default function Camara() {
 
             let tiempo = setTimeout(() => {
                 webcam.stop();
+                continuar = false;
             }, 9000);
 
             // append elements to the DOM
@@ -51,7 +55,7 @@ export default function Camara() {
     async function loop() {
         webcam.update(); // update the webcam frame
         await predict();
-        window.requestAnimationFrame(loop);
+        if (continuar) window.requestAnimationFrame(loop);
     }
 
     // run the webcam image through the image model
