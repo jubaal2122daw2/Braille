@@ -1,0 +1,16 @@
+{
+    "short_name": "Braille",
+    "name": "Braille",
+    "description": "Web App que traduce braile a alfabeto latín",
+    "icons": [
+      {
+      "src":"/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#f4f6f9",
+    "theme_color": "#3c8dbc",
+    "display": "standalone"
+  }

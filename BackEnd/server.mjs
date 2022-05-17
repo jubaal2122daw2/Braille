@@ -3,6 +3,7 @@ import fs from "fs";
 import express from "express";
 import rutas from './rutas.mjs';
 import cors from 'cors';
+import path from "path";
 
 const corsOptions = {
     origin: '*',
@@ -16,6 +17,11 @@ app.use(express.json());
 app.use(express.static("../FrontEnd/dist")); //Consumidor
 app.use("/api", cors(), rutas); //para conectar con las rutas del backend. "Api se define como una ruta solo en el backend"
 // app.use(cors(corsOptions));
+
+app.get("/service-worker.js", (req, res) => {
+    res.sendFile(path.resolve("../FrontEnd/dist/pwa/service-worker.js"));
+});
+
 app.get("*", (req, res) => {
     res.redirect('/');
 });
