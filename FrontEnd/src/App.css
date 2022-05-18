@@ -56,7 +56,11 @@
 
 .arrow{
   /* color: white; */
-  font-size: 2rem !important;
+  font-size: 1.5rem !important;
+}
+
+.close{
+  font-size: 3rem !important;
 }
 
 .back{
@@ -66,6 +70,10 @@
   /* font-size: 25px; */
   padding: 8px;
   /* padding-right: 18px;*/
+}
+
+.megafono{
+  font-size: 7rem !important;
 }
 
 .sub-menu{
@@ -79,9 +87,11 @@
 }
 
 /*ESTILO DE LA CAMARA*/
-/* #webcam-container canvas{
-  width: 100%;
-} */
+#webcam-container canvas{
+  margin: auto;
+  border: 3px solid #20948B;
+  border-radius: 10px;
+}
 
 .background-negro{
   background-color: black;

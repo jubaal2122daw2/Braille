@@ -3,6 +3,7 @@ import '../App.css';
 import { useEffect, useState } from 'react';
 import { Link, Outlet } from "react-router-dom";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import CloseIcon from '@mui/icons-material/Close';
 import Letra from './letra';
 
 export default function Camara() {
@@ -11,13 +12,13 @@ export default function Camara() {
     let continuar = false;
     const [letra, setLetra] = useState('');
     const [stopped, setStopped] = useState(false);
-    const [reset, setReset] = useState(false);
+    // const [mostrarclick, setMostrarClick] = useState(true);
     console.log("La letra del hook -->", letra);
 
  
-    // useEffect(() => {
-    //     if(!stopped) init();
-    // }, [stopped]);
+    useEffect(() => {
+        if(!stopped) init();
+    }, [stopped]);
 
     const handleChange = (newValue) => {
         setStopped(newValue);
@@ -48,9 +49,9 @@ export default function Camara() {
         // append elements to the DOM
         document.getElementById("webcam-container").appendChild(webcam.canvas);
         labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions; i++) { // and class labels
-            labelContainer.appendChild(document.createElement("div"));
-        }
+        // for (let i = 0; i < maxPredictions; i++) { // and class labels
+        //     labelContainer.appendChild(document.createElement("div"));
+        // }
 
         tiempo = setTimeout(() => {
             webcam.stop();
@@ -74,7 +75,7 @@ export default function Camara() {
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
+            // labelContainer.childNodes[i].innerHTML = classPrediction;
             if (prediction[i].probability.toFixed(2) > 0.90) {
                 setLetra(prediction[i].className);
             }
@@ -85,12 +86,12 @@ export default function Camara() {
             {!stopped ? (
                 <div className='grid place-items-center h-screen bg-black'>
                     <div className="-mb-16 box-border h-18 w-32 p-4 place-self-start">
-                        <Link className="back rounded-md" to='/catala'><ArrowBackIosNewIcon className="arrow" />Volver</Link>
+                        <Link onClick ={() => {continuar = false} } className="text-amber-700" to='/catala'><CloseIcon className="close" /></Link>
                     </div>
-                    <div className='text-teal-500' onClick={() => { init() }}>Click</div>
-                    {/* <div className='text-teal-500'>Centra el texto en la cámara para traducir</div> */}
-                    <div id="webcam-container"></div>
-                    <div id="label-container" className='text-teal-500'></div>
+                    {/* {mostrarclick &&(<div className='text-teal-500' onClick={() => {setMostrarClick(!setMostrarClick), init() }}>Click</div>)} */}
+                    <div className='w-full md:w-4/5 lg:w-2/5' id="webcam-container"></div>
+                    {/* <div id="label-container" className='text-teal-500'></div> */}
+                    <div className='text-teal-500'>Analitzant...</div>
                 </div>
             ) : (<Letra letra={letra} cambiarStop={handleChange} />)}
         </>
