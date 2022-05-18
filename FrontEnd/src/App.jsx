@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Link className="enlace" to="/idiomas">Haz click para continuar</Link>
+        <Link className="enlace" to="/catala">Fes Click per començar</Link>
       </header>
     </div>
   )
