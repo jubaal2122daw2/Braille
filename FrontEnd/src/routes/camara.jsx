@@ -57,7 +57,7 @@ export default function Camara() {
             webcam.stop();
             continuar = false;
             setStopped(true);
-        }, 4000);
+        }, 9000);
 
 
     }

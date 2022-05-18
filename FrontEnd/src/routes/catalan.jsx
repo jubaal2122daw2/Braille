@@ -10,7 +10,7 @@ export default function Catala() {
     return (
         <div>
             <div className="box-border h-18 w-32 p-4 ">
-                <Link className="back rounded-md" to='/'><ArrowBackIosNewIcon className="arrow" />Volver</Link>
+                <Link className="back rounded-md" to='/'><ArrowBackIosNewIcon className="arrow" />Tornar</Link>
             </div>
             <div className="container px-5 py-28 mx-auto grid content-center">
                     <div className='flex flex-wrap flex-col m-auto gap-20'>

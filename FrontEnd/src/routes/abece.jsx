@@ -35,7 +35,7 @@ export default function Abece() {
         return (
             <div>
                 <div className="box-border h-18 w-32 p-4 ">
-                    <Link className="back rounded-md" to='/catala'><ArrowBackIosNewIcon className="arrow" />Volver</Link>
+                    <Link className="back rounded-md" to='/catala'><ArrowBackIosNewIcon className="arrow" />Tornar</Link>
                 </div>
                 <div className='flex justify-center pt-10'>
                     <input
