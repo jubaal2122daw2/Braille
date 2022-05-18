@@ -11,20 +11,16 @@ export default function Camara() {
     let continuar = false;
     const [letra, setLetra] = useState('');
     const [stopped, setStopped] = useState(false);
+    const [reset, setReset] = useState(false);
     console.log("La letra del hook -->", letra);
-    console.log(stopped);
 
-    useEffect(() => {
-        if(!stopped) init();
-    }, [stopped]);
+ 
+    // useEffect(() => {
+    //     if(!stopped) init();
+    // }, [stopped]);
 
     const handleChange = (newValue) => {
-        console.log("entra en handlechange");
         setStopped(newValue);
-    }
-
-    function canceltiempo(){
-        clearTimeout(tiempo);
     }
 
     // Load the image model and setup the webcam
@@ -62,6 +58,7 @@ export default function Camara() {
             setStopped(true);
         }, 9000);
 
+
     }
 
     async function loop() {
@@ -88,9 +85,9 @@ export default function Camara() {
             {!stopped ? (
                 <div className='grid place-items-center h-screen bg-black'>
                     <div className="-mb-16 box-border h-18 w-32 p-4 place-self-start">
-                        <Link onClick={() => {canceltiempo(), webcam.stop()} } className="back rounded-md" to='/catala'><ArrowBackIosNewIcon className="arrow" />Volver</Link>
+                        <Link className="back rounded-md" to='/catala'><ArrowBackIosNewIcon className="arrow" />Volver</Link>
                     </div>
-                    {/* <div className='text-teal-500' onClick={() => { init() }}>Click</div> */}
+                    <div className='text-teal-500' onClick={() => { init() }}>Click</div>
                     {/* <div className='text-teal-500'>Centra el texto en la cámara para traducir</div> */}
                     <div id="webcam-container"></div>
                     <div id="label-container" className='text-teal-500'></div>
