@@ -34,7 +34,7 @@ export default function Abece() {
     } else {
         return (
             <div>
-                <div className="box-border h-18 w-32 p-4 ">
+                <div className="box-border h-18 p-5 ">
                     <Link className="back rounded-md" to='/catala'><ArrowBackIosNewIcon className="arrow" />Tornar</Link>
                 </div>
                 <div className='flex justify-center pt-10'>

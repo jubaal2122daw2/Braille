@@ -13,7 +13,7 @@ export default function Letra(props) {
 
     return (
         <div className='grid place-items-center h-screen'>
-            <div className="-mb-16 box-border h-18 w-32 p-4 place-self-start">
+            <div className="-mb-16 box-border h-18 p-5 place-self-start">
                 <Link onClick={() => { handleChange(false) }} className="back rounded-md" to='/camara'><ArrowBackIosNewIcon className="arrow" />Tornar</Link>
             </div>
             <div className='place-self-center'>

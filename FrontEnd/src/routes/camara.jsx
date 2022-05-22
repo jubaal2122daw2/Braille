@@ -85,7 +85,7 @@ export default function Camara() {
         <>
             {!stopped ? (
                 <div className='grid place-items-center h-screen bg-black'>
-                    <div className="-mb-16 box-border h-18 w-32 p-4 place-self-start">
+                    <div className="-mb-16 box-border h-18 p-5 place-self-start">
                         <Link onClick ={() => {continuar = false} } className="text-amber-700" to='/catala'><CloseIcon className="close" /></Link>
                     </div>
                     {/* {mostrarclick &&(<div className='text-teal-500' onClick={() => {setMostrarClick(!setMostrarClick), init() }}>Click</div>)} */}

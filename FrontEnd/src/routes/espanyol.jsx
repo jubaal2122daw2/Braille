@@ -9,7 +9,7 @@ import CameraAltIcon from '@mui/icons-material/CameraAlt';
 export default function Espanyol() {
     return (
         <div>
-            <div className="box-border h-18 w-32 p-4 ">
+            <div className="box-border h-18 p-5 ">
                 <Link className="back rounded-md" to='/idiomas'><ArrowBackIosNewIcon className="arrow" />Volver</Link>
             </div>
             EN DESARROLLO
