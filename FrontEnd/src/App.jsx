@@ -8,8 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Link className="enlace" to="/catala">Fes Click per començar</Link>
+        <Link className="enlace" to="/catala"><img src={logo} className="App-logo" alt="logo" /></Link>
       </header>
     </div>
   )

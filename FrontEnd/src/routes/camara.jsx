@@ -49,9 +49,9 @@ export default function Camara() {
         // append elements to the DOM
         document.getElementById("webcam-container").appendChild(webcam.canvas);
         labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions; i++) { // and class labels
-            labelContainer.appendChild(document.createElement("div"));
-        }
+        // for (let i = 0; i < maxPredictions; i++) { // and class labels
+        //     labelContainer.appendChild(document.createElement("div"));
+        // }
 
         tiempo = setTimeout(() => {
             webcam.stop();
@@ -75,7 +75,7 @@ export default function Camara() {
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
+            // labelContainer.childNodes[i].innerHTML = classPrediction;
             if (prediction[i].probability.toFixed(2) > 0.96) {
                 setLetra(prediction[i].className);
             }
@@ -90,7 +90,7 @@ export default function Camara() {
                     </div>
                     {/* {mostrarclick &&(<div className='text-teal-500' onClick={() => {setMostrarClick(!setMostrarClick), init() }}>Click</div>)} */}
                     <div className='w-full md:w-4/5 lg:w-2/5' id="webcam-container"></div>
-                    <div id="label-container" className='text-teal-700'></div>
+                    {/* <div id="label-container" className='text-teal-700'></div> */}
                     <div className='text-teal-500'>Analitzant...</div>
                 </div>
             ) : (<Letra letra={letra} cambiarStop={handleChange} />)}
