@@ -1,3 +1,7 @@
+/**
+ * @description Vista que carga el menú de selección en catalán.
+*/
+
 import * as React from 'react';
 import '../App.css';
 import { Link, Outlet } from "react-router-dom";

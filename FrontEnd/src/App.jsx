@@ -1,3 +1,6 @@
+/**
+ * @description Componente principal de la aplicación. Dirige a la vista de Catalan
+ */
 import { useState } from 'react'
 import logo from '/logo.svg'
 import './App.css'

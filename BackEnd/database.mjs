@@ -1,5 +1,5 @@
 /**
- * Connexión con MongoDB.
+ * @description Connexión con MongoDB.
  */
 import { MongoClient } from "mongodb";
 

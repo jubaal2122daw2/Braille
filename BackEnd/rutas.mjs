@@ -1,3 +1,6 @@
+/**
+ * @description Rutas del Backend
+ */
 import { accederBDD } from "./database.mjs";
 import { buscaLetra } from "./database.mjs";
 import express from "express";

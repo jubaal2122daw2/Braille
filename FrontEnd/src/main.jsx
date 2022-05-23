@@ -1,3 +1,7 @@
+/**
+ * @description Script encargado de cargar la página root de la aplicación y enroutar a las demás vistas.
+ */
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
@@ -26,5 +30,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   // </React.StrictMode>
 )
-
-//CUIDADO, QUITAR EL STRICT MODE PARA QUE FUNCIONE EN PRODUCCION (NO EN DESARROLLO) CARGA DOS VECES CIERTOS COMPONENTES.

@@ -1,9 +1,17 @@
+/**
+ * @description Devuelve la letra en catalán de la predicción
+ */
 import * as React from 'react';
 import '../App.css';
 import { useEffect, useState } from 'react';
 import { Link, Outlet } from "react-router-dom";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import CampaignIcon from '@mui/icons-material/Campaign';
+
+/**
+ * @param {*} props 
+ * @returns 
+ */
 
 export default function Letra(props) {
 

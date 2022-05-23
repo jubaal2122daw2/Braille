@@ -1,3 +1,7 @@
+/**
+ * @description Componente con TensorFlow.js para reconocer la imagen y extraer la letra en catalán
+ */
+
 import * as React from 'react';
 import '../App.css';
 import { useEffect, useState } from 'react';
@@ -7,6 +11,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import Letra from './letra';
 
 export default function Camara() {
+    /**
+     * @type {[boolean, function]} Stop
+     * @type {[string, function]} Letra
+     */
     const URL = "./models/";
     let model, webcam, labelContainer, maxPredictions, tiempo;
     let continuar = false;
@@ -25,6 +33,11 @@ export default function Camara() {
     }
 
     // Load the image model and setup the webcam
+    /**
+     * @function init
+     * @description Inicia la predicción con los modelos
+     * @returns {void}
+     */
 
     async function init() {
         continuar = true;

@@ -1,10 +1,24 @@
+/**
+ * @description Vista donde aparecen las fichas con las letras del abecedario en catalán
+ * y su correspondiente imagen con la traducción a Braille.
+ */
+
 import * as React from 'react';
 import '../App.css';
 import { useEffect, useState } from 'react';
 import { Link, Outlet } from "react-router-dom";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
+
 export default function Abece() {
+    /**
+     * @type {[boolean, function]} Estado del Modal
+     * @type {[string, function]} Error
+     * @type {[array, function]} Abecedario
+     * @type {[string, function]} Imagen
+     * @type {[string, function]} Buscar Letra
+     * 
+     */
     const [error, setError] = useState(null);
     const [abecedario, setAbecedario] = useState([]);
     const [imagen, setImagen] = useState('');
@@ -68,6 +82,15 @@ export default function Abece() {
         );
     }
 }
+
+/**
+ * Vista que contiene el Modal con la imagen de la letra.
+ * @constructor
+ * @param {Object} props - Propiedades del componente.
+ * @param {Object} props.estadoModal - Estado del modal.
+ * @param {Function} props.onChange - Función para cambiar el estado del modal.
+ * @param {String} props.imagen - Ruta de la imagen.
+ */
 
 function Modal(props) {
 
